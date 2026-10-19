@@ -14,9 +14,9 @@ Fix my skill's triggering and polish its discovery surfaces.
 
 ## When to use
 
-- A skill isn't triggering when it should
-- Two skills claim the same request
-- You want both trigger fixes AND better discoverability
+- You want both trigger fixes AND better discoverability in one pass
+- A skill isn't triggering when it should *and* its listing needs the same attention
+- Two skills claim the same request *and* you want the public copy updated after the split
 - Someone says "this skill doesn't work and nobody finds it"
 - You're preparing a skill for publication and want it tight
 

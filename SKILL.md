@@ -1,6 +1,6 @@
 ---
 name: tune-and-polish
-description: Tune a skill's trigger and boundaries with Tune-Skill, then audit its discoverability and polish it with Findable-Polish. Use when the user wants to fix a skill that isn't triggering correctly or overlaps with siblings, and also wants its repo description, README, and site page polished for discovery — in one pass. Chains tune-skill (fine-tune) → findable-polish (audit+polish) in one workflow. Not for creating skills from scratch (use draft-skill).
+description: Tune a skill's trigger and boundaries with Tune-Skill and then polish its discoverability with Findable-Polish, in one pass. Use when the user wants both halves at once, meaning a triggering or sibling-overlap fix AND polished repo description, topics, README or site page; chaining them means the listing is never polished for a skill whose triggering is still broken. Not for creating skills from scratch (use draft-skill), and not for a triggering-only or listing-only request, which belong to tune-skill and findable-polish alone.
 version: 1.0.0
 argument-hint: "[skill name | SKILL.md path]"
 user-invocable: true
@@ -79,6 +79,10 @@ Format the alternatives so the user can apply them directly to their repo metada
 - **Does not** create new skills from scratch (use draft-skill).
 - **Does not** push changes to GitHub — drafts fixes and hands over commands.
 - **Does not** retune a skill that already passes validation cleanly (only use if there are actual triggering issues).
+- **Triggering-only requests go to `tune-skill` alone.** If the user asks for neither the discovery
+  audit nor the polished listing, run tune-skill and stop; loading this chain does the second half
+  unasked.
+- **Listing-only requests go to `findable-polish` alone.**
 
 ## Dependencies
 
