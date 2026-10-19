@@ -1,6 +1,8 @@
 # tune-and-polish
 
-Tune a skill's trigger and boundaries with Tune-Skill, then audit its discoverability and polish it with Findable-Polish. Use when the user wants to fix a skill that isn't triggering correctly or overlaps with siblings, and also wants its repo description, README, and site page polished for discovery — in one pass.
+**Fix skill triggers and polish discoverability in one pass.**
+
+When a skill isn't triggering correctly or overlaps with siblings, and you also want its public surfaces (repo description, README, site page) polished for discovery, tune-and-polish handles both. It runs Tune-Skill to diagnose trigger/boundary/handoff issues and make minimal validated edits, then passes the result to Findable-Polish to audit discoverability gaps and generate improved alternatives. You get a skill that fires correctly and is easy to find.
 
 ## Usage
 
@@ -10,15 +12,43 @@ Tune a skill's trigger and boundaries with Tune-Skill, then audit its discoverab
 Fix my skill's triggering and polish its discovery surfaces.
 ```
 
-## Workflow
+## When to use
 
-1. **Tune-Skill** fine-tunes description, commands, and sibling boundaries
-2. **Findable-Polish** audits discoverability and generates polished alternatives
-3. Returns tune changes + discovery alternatives + recommended actions
+- A skill isn't triggering when it should
+- Two skills claim the same request
+- You want both trigger fixes AND better discoverability
+- Someone says "this skill doesn't work and nobody finds it"
+- You're preparing a skill for publication and want it tight
+
+## What it produces
+
+- Trigger/boundary/handoff audit from Tune-Skill
+- Minimal validated edits to SKILL.md
+- check_skill.py validation (FAIL/WARN/PASS)
+- Discoverability audit from Findable-Polish
+- Polished alternatives for descriptions, README, site page
+
+## Install
+
+```bash
+npx skills add arm-pz/tune-and-polish
+```
 
 ## Dependencies
 
 Requires `tune-skill` and `findable-polish` (which needs `findable` + `wordsmith`) to be installed.
+
+## Not for
+
+- Creating skills from scratch → use [draft-skill](https://github.com/arm-pz/draft-skill)
+- Just tuning without polishing → use [tune-skill](https://github.com/arm-pz/tune-skill) alone
+- Just polishing without tuning → use [findable-polish](https://github.com/arm-pz/findable-polish) alone
+
+## Related
+
+- **[tune-skill](https://github.com/arm-pz/tune-skill)** — Fix triggers and boundaries (phase 1)
+- **[findable-polish](https://github.com/arm-pz/findable-polish)** — Audit and polish discoverability (phase 2)
+- **[skill-launch](https://github.com/arm-pz/skill-launch)** — Full pipeline for new skills (includes these two)
 
 ## License
 
